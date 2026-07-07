@@ -1,193 +1,503 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>The Hungry Beaks — Coming Soon</title>
-  <meta name="description" content="Something crunchy is coming. Fries. Crispy chicken. Bold flavors. Opening soon at Park Avenue, Shahrah-e-Faisal, Karachi." />
+<title>The Hungry Beaks — Soft Launch Menu</title>
+<meta name="description" content="Soft launch is on. Crispy Zinger Burger at PKR 300. Loaded fries in seven flavours. Park Avenue, Shahrah-e-Faisal, Karachi." />
 
-  <!-- Brand font for site UI (Baloo 2). Logo is an image (your DynaPuff wordmark stays intact). -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --brand-yellow:#FFE600;
-      --ink:#0b0b0b;
-      --paper:#ffffff;
-      --muted: rgba(11,11,11,.72);
-      --card: rgba(255,255,255,.82);
-      --shadow: 0 18px 60px rgba(0,0,0,.12);
-      --radius: 18px;
-    }
+<style>
+  :root{
+    --yellow:#FFE600;
+    --yellow-deep:#F4D000;
+    --ink:#0b0b0b;
+    --cream:#FFFBEF;
+    --paper:#ffffff;
+    --chili:#E1391F;
+    --chili-deep:#B82612;
+    --muted: rgba(11,11,11,.62);
+    --line: rgba(11,11,11,.12);
+    --radius: 20px;
+    --shadow: 0 20px 50px rgba(11,11,11,.14);
+  }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: "Baloo 2", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(900px 500px at 15% 20%, rgba(255,230,0,.55), transparent 60%),
-        radial-gradient(900px 500px at 85% 30%, rgba(255,230,0,.35), transparent 60%),
-        linear-gradient(180deg, #fff 0%, #fff 55%, rgba(255,230,0,.10) 100%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family:"Inter", system-ui, sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    background-image:
+      radial-gradient(700px 380px at 8% 0%, rgba(255,230,0,.5), transparent 60%),
+      radial-gradient(600px 340px at 100% 10%, rgba(225,57,31,.10), transparent 55%);
+    background-repeat:no-repeat;
+  }
+  h1,h2,h3,.display{ font-family:"Baloo 2", system-ui, sans-serif; }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
 
-    .wrap{
-      width:min(960px, 100%);
-      position:relative;
-    }
+  .wrap{ width:min(980px, 100%); margin:0 auto; padding:28px 20px 60px; }
 
-    .card{
-      background:var(--card);
-      border:1px solid rgba(0,0,0,.08);
-      box-shadow:var(--shadow);
-      border-radius:var(--radius);
-      padding:28px 26px;
-      backdrop-filter: blur(8px);
-    }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    text-align:center;
+    padding:8px 8px 34px;
+  }
+  .logo{ width:min(300px, 62%); margin:0 auto 6px; }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:10px;
-    }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--ink);
+    color:var(--yellow);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:8px 16px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .badge::before{
+    content:"";
+    width:8px; height:8px; border-radius:50%;
+    background:var(--yellow);
+    box-shadow:0 0 0 3px rgba(255,230,0,.35);
+  }
 
-    /* ✅ Your uploaded logo file. Put it in the same folder as this HTML. */
-    .logo{
-      width:min(720px, 100%);
-      height:auto;
-      display:block;
-      border-radius:14px;
-    }
+  .headline{
+    font-size:clamp(32px, 5.6vw, 58px);
+    line-height:1.02;
+    font-weight:800;
+    margin:0 0 10px;
+  }
+  .headline .accent{
+    color:var(--chili);
+    -webkit-text-stroke: 0;
+  }
+  .subline{
+    font-size:clamp(16px, 2vw, 19px);
+    color:var(--muted);
+    font-weight:500;
+    max-width:520px;
+    margin:0 auto 26px;
+  }
 
-    .headline{
-      text-align:center;
-      font-size: clamp(28px, 4vw, 48px);
-      line-height:1.05;
-      margin:18px 0 8px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
+  /* price sticker (signature element) */
+  .sticker{
+    position:relative;
+    width:220px; height:220px;
+    margin:6px auto 8px;
+    background:var(--chili);
+    color:var(--yellow);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(-9deg);
+    clip-path: polygon(50% 0%, 61% 8%, 75% 2%, 80% 15%, 93% 13%, 92% 27%, 100% 35%, 90% 42%, 96% 55%, 85% 58%, 87% 72%, 75% 70%, 72% 84%, 61% 76%, 55% 90%, 47% 78%, 35% 92%, 32% 78%, 20% 86%, 22% 72%, 8% 74%, 15% 60%, 3% 52%, 15% 45%, 5% 33%, 18% 30%, 15% 17%, 28% 20%, 30% 6%, 42% 14%);
+    box-shadow: 0 16px 34px rgba(225,57,31,.35);
+  }
+  .sticker-inner{
+    transform:rotate(9deg);
+    text-align:center;
+    padding:0 14px;
+  }
+  .sticker-eyebrow{
+    font-family:"Baloo 2", sans-serif;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    opacity:.85;
+  }
+  .sticker-name{
+    font-family:"Baloo 2", sans-serif;
+    font-size:16px;
+    font-weight:700;
+    line-height:1.1;
+    margin:2px 0 6px;
+  }
+  .sticker-price{
+    font-family:"Baloo 2", sans-serif;
+    font-size:30px;
+    font-weight:800;
+    line-height:1;
+  }
+  .sticker-price sup{
+    font-size:14px;
+    font-weight:700;
+    margin-right:2px;
+  }
 
-    .subline{
-      text-align:center;
-      font-size: clamp(16px, 2vw, 22px);
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-weight:600;
-    }
+  /* ---------- SECTION LABELS ---------- */
+  .section{ margin-top:54px; }
+  .section-head{
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .kicker{
+    display:block;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--chili);
+    margin-bottom:6px;
+  }
+  .section-title{
+    font-size:clamp(24px, 3.4vw, 34px);
+    font-weight:800;
+    margin:0;
+  }
+  .section-note{
+    color:var(--muted);
+    font-weight:500;
+    font-size:14.5px;
+    margin-top:8px;
+  }
 
-    .location{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:center;
-      margin: 14px 0 18px;
-      font-size: 18px;
-      font-weight:700;
-    }
+  /* ---------- FLAVOUR BOARD ---------- */
+  .board{
+    background:#FFF3BE;
+    border:1px solid rgba(11,11,11,.08);
+    border-radius:26px;
+    padding:30px 24px 26px;
+    box-shadow:var(--shadow);
+  }
+  .board-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+  @media (min-width:720px){
+    .board-grid{ grid-template-columns:1fr 1fr; }
+  }
+  .col-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(11,11,11,.15);
+  }
+  .col-title{
+    color:var(--ink);
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:.02em;
+  }
+  .col-tag{
+    margin-left:auto;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:rgba(11,11,11,.45);
+  }
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      background: rgba(255,230,0,.65);
-      border: 1px solid rgba(0,0,0,.10);
-    }
+  .flame{ width:15px; height:15px; flex:0 0 auto; }
+  .flame path{ fill:var(--chili); }
+  .leaf path{ fill:rgba(11,11,11,.22); }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
-      margin-top:8px;
-    }
+  .flavour-list{ list-style:none; margin:0; padding:0; }
+  .flavour-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:11px 2px;
+    border-bottom:1px dashed rgba(11,11,11,.15);
+  }
+  .flavour-row:last-child{ border-bottom:none; }
+  .heat{
+    display:flex;
+    gap:2px;
+    width:44px;
+    flex:0 0 auto;
+  }
+  .flavour-name{
+    color:var(--ink);
+    font-weight:600;
+    font-size:15.5px;
+    flex:1 1 auto;
+  }
+  .flavour-price{
+    font-family:"Baloo 2", sans-serif;
+    color:var(--chili-deep);
+    font-weight:700;
+    font-size:15.5px;
+    white-space:nowrap;
+  }
+  .flavour-price small{
+    font-family:"Inter",sans-serif;
+    font-weight:600;
+    opacity:.6;
+    font-size:11px;
+    margin-right:1px;
+  }
 
-    @media (min-width: 760px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-    }
+  .board-foot{
+    text-align:center;
+    margin-top:22px;
+    padding-top:16px;
+    border-top:1px solid rgba(11,11,11,.15);
+    color:rgba(11,11,11,.55);
+    font-size:13.5px;
+    font-weight:500;
+  }
 
-    .cta{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius: 14px;
-      background: var(--paper);
-      border: 1px solid rgba(0,0,0,.10);
-      text-decoration:none;
-      color:var(--ink);
-      font-weight:800;
-      transition: transform .12s ease, box-shadow .12s ease;
-    }
+  /* ---------- COMING SOON ---------- */
+  .soon-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+    gap:14px;
+  }
+  .soon-card{
+    background:var(--paper);
+    border:1px dashed var(--line);
+    border-radius:16px;
+    padding:20px 16px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .soon-card::after{
+    content:"Coming soon";
+    position:absolute;
+    top:16px; right:-42px;
+    width:160px;
+    background:var(--yellow);
+    color:var(--ink);
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    text-align:center;
+    padding:5px 0;
+    transform:rotate(35deg);
+  }
+  .soon-name{
+    font-family:"Baloo 2", sans-serif;
+    font-weight:700;
+    font-size:16px;
+    margin-top:8px;
+    color:rgba(11,11,11,.55);
+  }
+  .soon-icon{ font-size:26px; opacity:.5; }
 
-    .cta:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(0,0,0,.10);
-    }
+  /* ---------- LOCATION / CTA ---------- */
+  .location-card{
+    background:var(--paper);
+    border-radius:22px;
+    padding:28px 26px;
+    box-shadow:var(--shadow);
+    display:grid;
+    gap:22px;
+  }
+  @media (min-width:640px){
+    .location-card{ grid-template-columns:1.1fr .9fr; align-items:center; }
+  }
+  .addr-label{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--chili);
+    margin-bottom:6px;
+    display:block;
+  }
+  .addr{
+    font-family:"Baloo 2", sans-serif;
+    font-size:20px;
+    font-weight:700;
+    line-height:1.35;
+    margin:0;
+  }
+  .cta-group{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .cta{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:13px 16px;
+    border-radius:13px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:15px;
+    border:1px solid var(--line);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .cta:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.12); }
+  .cta:focus-visible{ outline:3px solid var(--chili); outline-offset:2px; }
+  .cta.primary{ background:var(--ink); color:var(--yellow); border-color:var(--ink); }
+  .cta.secondary{ background:var(--paper); color:var(--ink); }
 
-    .small{
-      text-align:center;
-      margin-top:16px;
-      color: rgba(0,0,0,.55);
-      font-weight:600;
-      font-size: 14px;
-    }
+  footer{
+    text-align:center;
+    margin-top:44px;
+    color:rgba(11,11,11,.5);
+    font-weight:600;
+    font-size:13.5px;
+  }
 
-    .dot{
-      width:10px; height:10px;
-      border-radius:50%;
-      background: var(--ink);
-      box-shadow: 0 0 0 4px rgba(255,230,0,.55);
-      display:inline-block;
-    }
-  </style>
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .cta{ transition:none; }
+  }
+</style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card" role="region" aria-label="The Hungry Beaks Coming Soon">
-      <div class="brand">
-        <!-- Put THB-Logo.png in the same folder as this HTML file -->
-        <img class="logo" src="Logo THB.png" alt="The Hungry Beaks logo" />
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="logo" src="Logo THB.png" alt="The Hungry Beaks logo" />
+    <span class="badge">Soft launch is on</span>
+    <h1 class="headline">Something Crunchy<br>Has <span class="accent">Landed.</span></h1>
+    <p class="subline">Fries. Crispy chicken. Bold flavours. Here's what's ready to order right now.</p>
+
+    <div class="sticker" aria-hidden="false">
+      <div class="sticker-inner">
+        <span class="sticker-eyebrow">Introductory price</span>
+        <div class="sticker-name">Crispy Zinger<br>Burger</div>
+        <div class="sticker-price"><sup>PKR</sup>300</div>
       </div>
+    </div>
+  </section>
 
-      <h1 class="headline">Something Crunchy Is Coming.</h1>
-      <p class="subline">Fries. Crispy chicken. Bold flavors.</p>
+  <!-- FLAVOUR BOARD -->
+  <section class="section" id="menu">
+    <div class="section-head">
+      <span class="kicker">The Fry Flavours</span>
+      <h2 class="section-title">Seven ways to crunch.</h2>
+      <p class="section-note">Regular portion size · introductory pricing</p>
+    </div>
 
-      <div class="location">
-        <span class="pill"><span class="dot"></span> Opening soon at Park Avenue, Shahrah-e-Faisal, Karachi.</span>
+    <div class="board">
+      <div class="board-grid">
+
+        <!-- NON SPICY -->
+        <div>
+          <div class="col-head">
+            <svg class="flame leaf" viewBox="0 0 24 24"><path d="M12 2c3 4-1 5-1 8a4 4 0 1 0 8 0c0-5-3-6-3-10-4 1-6 3-4 2Z"/></svg>
+            <span class="col-title">No Heat</span>
+            <span class="col-tag">Non-spicy</span>
+          </div>
+          <ul class="flavour-list">
+            <li class="flavour-row">
+              <span class="heat"></span>
+              <span class="flavour-name">Plain</span>
+              <span class="flavour-price"><small>PKR</small>100</span>
+            </li>
+            <li class="flavour-row">
+              <span class="heat"></span>
+              <span class="flavour-name">Chicken</span>
+              <span class="flavour-price"><small>PKR</small>130</span>
+            </li>
+            <li class="flavour-row">
+              <span class="heat"></span>
+              <span class="flavour-name">Garlic</span>
+              <span class="flavour-price"><small>PKR</small>130</span>
+            </li>
+            <li class="flavour-row">
+              <span class="heat"></span>
+              <span class="flavour-name">Butter Cheese</span>
+              <span class="flavour-price"><small>PKR</small>130</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- SPICY -->
+        <div>
+          <div class="col-head">
+            <svg class="flame" viewBox="0 0 24 24"><path d="M12 2c3 4-1 5-1 8a4 4 0 1 0 8 0c0-5-3-6-3-10-4 1-6 3-4 2Z"/></svg>
+            <span class="col-title">Bring the Heat</span>
+            <span class="col-tag">Spicy</span>
+          </div>
+          <ul class="flavour-list">
+            <li class="flavour-row">
+              <span class="heat">
+                <svg class="flame" viewBox="0 0 24 24"><path d="M12 2c3 4-1 5-1 8a4 4 0 1 0 8 0c0-5-3-6-3-10-4 1-6 3-4 2Z"/></svg>
+                <svg class="flame" viewBox="0 0 24 24"><path d="M12 2c3 4-1 5-1 8a4 4 0 1 0 8 0c0-5-3-6-3-10-4 1-6 3-4 2Z"/></svg>
+              </span>
+              <span class="flavour-name">Chatpata</span>
+              <span class="flavour-price"><small>PKR</small>130</span>
+            </li>
+            <li class="flavour-row">
+              <span class="heat">
+                <svg class="flame" viewBox="0 0 24 24"><path d="M12 2c3 4-1 5-1 8a4 4 0 1 0 8 0c0-5-3-6-3-10-4 1-6 3-4 2Z"/></svg>
+                <svg class="flame" viewBox="0 0 24 24"><path d="M12 2c3 4-1 5-1 8a4 4 0 1 0 8 0c0-5-3-6-3-10-4 1-6 3-4 2Z"/></svg>
+              </span>
+              <span class="flavour-name">Fajita</span>
+              <span class="flavour-price"><small>PKR</small>130</span>
+            </li>
+            <li class="flavour-row">
+              <span class="heat">
+                <svg class="flame" viewBox="0 0 24 24"><path d="M12 2c3 4-1 5-1 8a4 4 0 1 0 8 0c0-5-3-6-3-10-4 1-6 3-4 2Z"/></svg>
+                <svg class="flame" viewBox="0 0 24 24"><path d="M12 2c3 4-1 5-1 8a4 4 0 1 0 8 0c0-5-3-6-3-10-4 1-6 3-4 2Z"/></svg>
+                <svg class="flame" viewBox="0 0 24 24"><path d="M12 2c3 4-1 5-1 8a4 4 0 1 0 8 0c0-5-3-6-3-10-4 1-6 3-4 2Z"/></svg>
+              </span>
+              <span class="flavour-name">Hot &amp; Sour</span>
+              <span class="flavour-price"><small>PKR</small>130</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
+      <div class="board-foot">All fries served in regular portion size.</div>
+    </div>
+  </section>
 
-      <!-- Optional contact buttons (keep it simple: choose 1–2 max) -->
-      <div class="grid">
-        <!-- WhatsApp: replace 923XXXXXXXXX with your number in international format (Pakistan: 92...) -->
-        <a class="cta" href="https://wa.me/923XXXXXXXXX" target="_blank" rel="noopener">
-          WhatsApp Us
-        </a>
-
-        <!-- Instagram: replace thehungrybeaks with your actual handle -->
-        <a class="cta" href="https://www.instagram.com/thehungrybeaks" target="_blank" rel="noopener">
-          Follow on Instagram
-        </a>
+  <!-- COMING SOON -->
+  <section class="section">
+    <div class="section-head">
+      <span class="kicker">Landing next</span>
+      <h2 class="section-title">Coming soon to the menu.</h2>
+    </div>
+    <div class="soon-grid">
+      <div class="soon-card">
+        <div class="soon-icon">🥤</div>
+        <div class="soon-name">Drinks</div>
       </div>
-
-      <div class="small">
-        thehungrybeaks.com • Crunch the Chunks.
+      <div class="soon-card">
+        <div class="soon-icon">🥪</div>
+        <div class="soon-name">Crispy Club Sandwich</div>
       </div>
-    </section>
-  </main>
+      <div class="soon-card">
+        <div class="soon-icon">🌯</div>
+        <div class="soon-name">Crispy Zinger Wrap</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION / CTA -->
+  <section class="section">
+    <div class="location-card">
+      <div>
+        <span class="addr-label">Find us</span>
+        <p class="addr">Shop # G-20, Park Avenue<br>Main Shahrah-e-Faisal, Karachi</p>
+      </div>
+      <div class="cta-group">
+        <a class="cta primary" href="https://wa.me/923XXXXXXXXX" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a class="cta secondary" href="https://www.instagram.com/thehungrybeaks" target="_blank" rel="noopener">Follow on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>thehungrybeaks.com &nbsp;·&nbsp; Crunch the Chunks.</footer>
+
+</main>
 </body>
 </html>
-
-
